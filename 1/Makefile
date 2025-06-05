@@ -18,6 +18,24 @@ sscal.o: sscal.c
 
 bench_sscal.out: bench_sscal.o sscal.o
 	${CC} ${CFLAGS} -o $@ $^
+
+bench_dgemm.o: bench_dgemm.c
+	${CC} ${CFLAGS} -c $^ -o $@
+
+dgemm.o: dgemm.c
+	${CC} ${CFLAGS} -c $^ -o $@
+
+bench_dgemm.out: bench_dgemm.o dgemm.o
+	${CC} ${CFLAGS} -o $@ $^
+
+bench_sdot.o: bench_sdot.c
+	${CC} ${CFLAGS} -c $^ -o $@
+
+sdot.o: sdot.c
+	${CC} ${CFLAGS} -c $^ -o $@
+
+bench_sdot.out: bench_sdot.o sdot.o
+	${CC} ${CFLAGS} -o $@ $^
 	
 clean:
 	rm -f *.o *.out

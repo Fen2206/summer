@@ -5,7 +5,6 @@ void dgemm(int length, double *A, double *B, double *C);
 
 int main(void) {
     const int N = 1024;
-    printf("Running DGEMM operation on %dx%d matrices\n", N, N);
 
     double *A = (double *)malloc(N * N * sizeof(double));
     double *B = (double *)malloc(N * N * sizeof(double));
